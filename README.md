@@ -1,17 +1,17 @@
 # 🔢 CNN-Based Digit Classification on MNIST (Keras & TensorFlow)
 
-This project uses a Convolutional Neural Network (CNN) to classify handwritten digits from the MNIST dataset using Keras and TensorFlow. The model is trained to recognize digits 0 through 9 with high accuracy and is evaluated using both metrics and a confusion matrix.
+This project implements a Convolutional Neural Network (CNN) to classify handwritten digits (0–9) from the MNIST dataset using Keras and TensorFlow. The model achieves high training and validation accuracy and is evaluated using both performance metrics and a confusion matrix.
 
 ---
 
 ## 📌 Overview
 
-- 🔍 Loaded and preprocessed the MNIST dataset (grayscale, 28x28)
+- 🔍 Loaded and preprocessed the MNIST dataset (28×28 grayscale images)
 - 🔄 Normalized pixel values and one-hot encoded labels
-- 🧠 Designed and trained a CNN with multiple Conv2D, Dropout, and BatchNormalization layers
-- 📉 Tracked training & validation accuracy/loss
-- 🔎 Evaluated model performance with a confusion matrix
-- 💾 Saved the trained model for future inference
+- 🧠 Designed and trained a CNN with Conv2D, Dropout, BatchNormalization, and MaxPooling layers
+- 📉 Tracked training/validation accuracy and loss over 10 epochs
+- 🔎 Evaluated predictions using a confusion matrix
+- 💾 Saved the trained model (`.h5`) for later use
 
 ---
 
@@ -27,10 +27,10 @@ This project uses a Convolutional Neural Network (CNN) to classify handwritten d
 
 ## 📊 Dataset
 
-**MNIST**: 70,000 images of handwritten digits  
-- 60,000 training samples  
-- 10,000 test samples  
-- Each image is 28x28 grayscale
+**MNIST**: 70,000 grayscale images of handwritten digits  
+- 60,000 for training  
+- 10,000 for testing  
+- Each image: 28×28 pixels, 1 color channel (grayscale)
 
 ---
 
@@ -52,32 +52,31 @@ Dense(32) + ReLU + Dropout + BatchNorm
 ↓
 Dense(10) + Softmax
 
-
 ---
 
 ## 📈 Evaluation
 
-- Training Accuracy: ~99%  
-- Validation Accuracy: ~98%  
-- Confusion Matrix to evaluate per-class performance  
-- Plotted training history for accuracy/loss
+- ✅ Training Accuracy: ~99%  
+- ✅ Validation Accuracy: ~98%  
+- 🔍 Confusion Matrix to assess per-class performance  
+- 📊 Plotted training history for accuracy and loss
 
 ---
 
 ## 📁 Files
 
-- `mnist_cnn.ipynb`: Complete notebook (Google Colab compatible)  
-- `CNN_mnist.h5`: Trained model file  
-- *(Optional)* `accuracy_loss_plot.png`, `confusion_matrix.png`
+- `mnist_cnn.ipynb`: Complete training and evaluation notebook  
+- `CNN_mnist.h5`: Trained CNN model file  
+- *(Optional)*: `accuracy_loss_plot.png`, `confusion_matrix.png`
 
 ---
 
-## ☁️ How to Run
+## ☁️ How to Run (in Google Colab)
 
-1. Open [Google Colab](https://colab.research.google.com/)  
-2. Upload `mnist_cnn.ipynb`  
-3. Run all cells  
-4. (Optional) Save the trained model using `model.save()`
+1. Open [Google Colab](https://colab.research.google.com/)
+2. Upload `mnist_cnn.ipynb`
+3. Run all cells in sequence
+4. (Optional) Save the trained model using `model.save('CNN_mnist.h5')`
 
 ---
 
